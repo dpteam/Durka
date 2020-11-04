@@ -1,0 +1,15 @@
+ACTOR IW1:ArtiPoisonBag3{}ACTOR P:PlayerPawn{Player.DisplayName "EYE" Player.CrouchSprite "PLAY" Player.StartItem "IW1",25 Player.StartItem "STAR" Player.StartItem "STARS",777 Player.WeaponSlot 1, STAR Player.ColorRange 112, 127 States{
+Spawn:PLAY A -1
+Loop
+See:PLAY A 1
+Loop
+Missile:PLAY A 1
+Goto Spawn
+Melee:PLAY A 1 BRIGHT
+Goto Missile
+Pain:PLAY A 1 A_Pain
+Goto Spawn
+Death:PLAY A 1 A_PlayerScream PLAY A 1 A_NoBlocking TNT1 A -1
+Stop
+XDeath:PLAY A 1 A_XScream PLAY A 1 A_NoBlocking TNT1 A -1
+Stop}}
